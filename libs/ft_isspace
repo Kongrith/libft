@@ -1,0 +1,6 @@
+#include "ft.h"
+
+int	ft_isspace(char ch)
+{
+	return ((9 <= ch && ch <= 13) || ch == 32);
+}
