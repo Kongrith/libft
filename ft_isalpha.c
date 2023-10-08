@@ -6,13 +6,14 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:25:44 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/02 22:08:14 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/03 02:42:54 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 #include <ctype.h>
 */
+
 int	ft_isalpha(char c)
 {
 	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))

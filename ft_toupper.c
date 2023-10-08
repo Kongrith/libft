@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 18:27:19 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:17:16 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/03 14:10:55 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/05 14:39:32 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 */
-
-int	ft_isdigit(char c)
+int	ft_toupper(int c)
 {
-	if ('0' <= c && c <= '9')
-	{
-		return (1);
-	}
+	if ('a' <= c && c <= 'z')
+		return (c - 32);
 	else
-	{
-		return (0);
-	}
+		return (c);
 }
-
 /*
-int	main(void)
+int main()
 {
-	char a = '5';
-    printf("test '5': %d %d \n", isdigit(a), ft_isdigit(a));
-	int  b = 5;
-	printf("test 5: %d %d \n", isdigit(b), ft_isdigit(b));
-	char c = '-';
-	printf("test '-': %d %d \n", isdigit(c), ft_isdigit(c));
-	char  d = 's';
-	printf("test 's': %d %d \n", isdigit(d), ft_isdigit(d));
-*/
+    int j = 0;
+    char str[] = "GeEks@123\n";
+    char ch;
+ 
+    while (str[j] != '\n') {
+        ch = str[j];
+        putchar(toupper(ch));
+        j++;
+    }
+	printf("\n");
+	j = 0;
+	while (str[j] != '\n') {
+		ch = str[j];
+		putchar(ft_toupper(ch));
+		j++;
+	}
+    return 0;
+}*/
