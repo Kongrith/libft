@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 16:45:50 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 13:58:54 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/03 02:43:43 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/03 14:09:45 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <stdio.h>
 
-# include <unistd.h>
-# include <stdlib.h>
+int	main(void)
+{
+	char c;
+    c = 'Q';
+    printf("%c is alphabet character: %d \n", c, ft_isalpha(c));
 
-/* */
-int	ft_isalpha(char c);
-int ft_isdigit(char c);
-int ft_isalnum(char c);
-int ft_isascii(char c);
-int ft_isprint(char c);
+    c = 'q';
+    printf("%c is digit: %d \n", c, ft_isdigit(c));
 
-/* */
-int ft_strlen(char c);
-
-#endif
+    c='+';
+    printf("%c is numeric + alphabic: %d \n", c, ft_isalnum(c));
+	return (0);
+}

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 16:45:50 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 13:58:54 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/06/28 14:06:13 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/03 14:00:50 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+	char	*p;
+	int		len;
 
-# include <unistd.h>
-# include <stdlib.h>
-
-/* */
-int	ft_isalpha(char c);
-int ft_isdigit(char c);
-int ft_isalnum(char c);
-int ft_isascii(char c);
-int ft_isprint(char c);
-
-/* */
-int ft_strlen(char c);
-
-#endif
+	len = 0;
+	while (src[len])
+		len++;
+	dest = (char *) malloc((len + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	p = dest;
+	while (*src)
+		*p++ = *src++;
+	*p = '\0';
+	return (dest);
+}

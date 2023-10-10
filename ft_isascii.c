@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 18:27:19 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:17:16 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/02 23:59:20 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/03 00:18:20 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
 #include <stdio.h>
 #include <ctype.h>
 */
-
-int	ft_isdigit(char c)
+int	ft_isascii(char c)
 {
-	if ('0' <= c && c <= '9')
+	if (0 <= c && c <= 127)
 	{
 		return (1);
 	}
@@ -25,16 +24,17 @@ int	ft_isdigit(char c)
 		return (0);
 	}
 }
-
 /*
 int	main(void)
 {
-	char a = '5';
-    printf("test '5': %d %d \n", isdigit(a), ft_isdigit(a));
+	char a = 'a';
+    printf("test %c  : %d %d \n", a, isascii(a), ft_isascii(a));
 	int  b = 5;
-	printf("test 5: %d %d \n", isdigit(b), ft_isdigit(b));
-	char c = '-';
-	printf("test '-': %d %d \n", isdigit(c), ft_isdigit(c));
-	char  d = 's';
-	printf("test 's': %d %d \n", isdigit(d), ft_isdigit(d));
-*/
+	printf("test %d  : %d %d \n", b, isascii(b), ft_isascii(b));
+	char c = 0x80;
+	printf("test %c  : %d %d \n", c, isascii(c), ft_isascii(c));
+	char  d = 0x7c ;
+	printf("test %c  : %d %d \n", d, isascii(d), ft_isascii(d));
+	char  e = '5';
+	printf("test '%c': %d %d \n", e, isascii(e), ft_isascii(e));
+}*/
