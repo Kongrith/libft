@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:50:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/07 13:55:37 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:32:32 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	*ft_bzero (void *s, size_t n)
 	}
 	return s;
 }  
-
+/*
 int main(void) 
 { 
     char str1[40] = "GeeksForGeeks is for programming geeks.";
@@ -49,4 +49,4 @@ int main(void)
     ft_bzero(str2 + 31, 10);
 	printf("After ft_bzero(): %s\n", str2);
 	return 0; 
-} 
+}*/

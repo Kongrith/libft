@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 22:19:14 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:36:04 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:35:40 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (char_s1 - char_s2);
 }
 
-#include <stdio.h>
-#include <string.h>
+/*
 int	main(void)
 {
 	char	str1[] = "abc";
@@ -49,5 +48,4 @@ int	main(void)
 	(void) str2;
 	printf("%d ", strncmp(str1, str2, 2));
 	return (0);
-}
-
+}*/

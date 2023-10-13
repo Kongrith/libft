@@ -6,7 +6,7 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:25:03 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/10 22:25:33 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:14:10 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return dest;
 }
+
 int main () {
 	char src1[] = "1234";
 	//char src2[] = "1234";
