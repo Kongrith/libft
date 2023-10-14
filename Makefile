@@ -4,6 +4,7 @@ SRCS = 	ft_isalpha.c \
 		ft_isalnum.c \
 		ft_isprint.c \
 		ft_strlen.c \
+		ft_memcpy.c
 
 OBJS = $(SRCS:.c=.o)
 CXX = gcc
