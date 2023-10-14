@@ -6,12 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 13:36:22 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/14 09:38:03 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:56:48 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* strlcpy
-copy string to an specific size
+copy a size-bounded string to destination with specific blocks.
 
 */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	if (size == 0)
 		return (0);
 
-	length = ft_strlen(src);
+	length = ft_strlen((char *) src);
 	index = 0;
 	while (index < size - 1 && index < length)
 	{
@@ -35,9 +35,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	*(dest + index) = '\0';
 	return (index);
 }
-
+/*
 int	main(void)
 {
 	char src1[] = "abcde";
-	char dest[] 
-}
+	char dest1[] = "";
+
+	printf("%ld \n", ft_strlcpy(dest1, src1, 2));
+	printf("%s \n", dest1);
+}*/

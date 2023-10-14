@@ -6,11 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 17:29:42 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/06 15:04:20 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:24:35 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
+
 size_t	ft_strlen(char *str)
 {
 	int	i;

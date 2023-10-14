@@ -6,7 +6,7 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:55:36 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 14:30:58 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:38:12 by kkomasat         ###   ########.fr       */
 
 /* memmove
 copy a memory block where source and destination can overlap
@@ -23,8 +23,7 @@ b) forward copy
 
 */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_memmove(void *dest0, const void *src0, size_t n)
 {

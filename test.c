@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 02:43:43 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 14:40:13 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/14 11:52:26 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main () {
 	char src2[] = "0123456789";
 	printf("Before   memcpy dest = %s\n", src1);
 
-	char *ans1 = memmove(src1-1, src1, 10);
-	char *ans2 = memmove(src2-1, src2, 10);
+	char *ans1 = memmove(src1+5, src1, 5);
+	char *ans2 = ft_memmove(src2+5, src2, 5);
 
 	for (int i = 0; i < 10; i++)
 	{
