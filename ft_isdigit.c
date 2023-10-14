@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:27:19 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:17:16 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:41:28 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -14,7 +14,7 @@
 #include <ctype.h>
 */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if ('0' <= c && c <= '9')
 	{

@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:25:44 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:42:54 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:38:37 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -14,7 +14,7 @@
 #include <ctype.h>
 */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
 	{

@@ -6,21 +6,24 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:50:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/05 16:14:48 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:08:02 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> 
-#include <string.h> 
+/* memset
+fill target memory with a constant byte for specific block.
+
+*/
 
 #include "libft.h"
-void	*ft_memset (void *b, int c, size_t len )
+
+void	*ft_memset (void *dest, int c, size_t len )
 {
 	size_t	i;
 	unsigned char	*ptr;
 
 	i = 0;
-	ptr = (unsigned char *)b;
+	ptr = (unsigned char *)dest;
 	while (i < len)  
 	{
 		*(ptr + i) = (unsigned char) c;
@@ -28,7 +31,7 @@ void	*ft_memset (void *b, int c, size_t len )
 	}
 	return b;
 }  
-
+/*
 int main(void) 
 { 
     char str1[40] = "GeeksForGeeks is for programming geeks.";
@@ -40,4 +43,4 @@ int main(void)
     ft_memset(str2 + 32, '+', 8*sizeof(char));
 	printf("After ft_memset(): %s\n", str2);
 	return 0; 
-} 
+}*/
