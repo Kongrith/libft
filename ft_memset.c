@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:50:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 15:08:02 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/15 15:30:24 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset (void *dest, int c, size_t len )
 		*(ptr + i) = (unsigned char) c;
 		++i;
 	}
-	return b;
+	return dest;
 }  
 /*
 int main(void) 
