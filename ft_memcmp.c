@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 23:57:42 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/17 15:38:33 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/16 14:43:35 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/16 16:57:32 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* memchr
-search for a byte with "c" in the pointer string with specific blocks.
+/* memcmp
+compare memory area
 
 */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ptr;
-	ptr = (char *) s;
+	char	*ptr1;
+	char	*ptr2;
+	size_t	i;
 
-	while (n > 0)
+	ptr1 = (char *) s1;
+	ptr2 = (char *) s2;
+	i = 0;	
+	while ((ptr1[i] == ptr2[i]) && i < n)
 	{
-		if (*ptr == c)
-			return ((void *) ptr);
-		++ptr;
-		--n;
+		if (ptr1[i] == '\0')
+			return (0);
+		if (++i == n)
+			return(0);
 	}
-	return (0);
+	return (ptr1[i] - ptr2[i]);
 }
-
 /*
 int	main()
 {
-	char str1[]="cat on the table.";
-	char c = 'o';
-	printf("original: %s\n", str1);
-	printf("memchr   : %s\n", (char *) memchr(str1, c, 0));
-	printf("ft_memchr: %s\n", (char *) ft_memchr(str1, c, 0));
+	char str1[] = "abcf";
+	char str2[] = "abcdg";
+
+	printf("memcmp   : %d\n", memcmp(str1, str2, 4));
+	printf("ft_memcmp: %d\n", ft_memcmp(str1, str2, 4));
 	return(0);
 }*/

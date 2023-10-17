@@ -6,7 +6,7 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:25:03 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/14 11:48:41 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:37:27 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void chk_overlap_mem(void *dest, void *src, size_t n)
 	while (i < n)
 	{
     	if (x+i==y || y+i==x)
-		{
-			printf("error");
-		}
+			exit(1);
 		++i;
 	}
 }
@@ -41,15 +39,20 @@ void *ft_memcpy(void *dest0, const void *src0, size_t n)
 	char	*src;
 	
 	dest = (char *) dest0;
-	src = (char *)src0;
-	chk_overlap_mem(dest, src, n);
+	src = (char *) src0;
+	
+	if ((dest == src) || n == 0)
+		return (dest);
+	if ((dest == NULL) && (src == NULL))
+		return (0);
+	//chk_overlap_mem(dest, src, n);
 	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		++i;
-	}
-	return dest;
+		while (i < n)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+	return (void *) dest;
 }
 /*
 int main () {

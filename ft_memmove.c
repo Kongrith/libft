@@ -6,7 +6,7 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:55:36 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/14 11:38:12 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/17 15:12:25 by kkomasat         ###   ########.fr       */
 
 /* memmove
 copy a memory block where source and destination can overlap
@@ -38,7 +38,7 @@ void *ft_memmove(void *dest0, const void *src0, size_t n)
 		
 		if (dest > src && src + n > dest)
 		{
-			printf("backward copy case\n");
+			//printf("backward copy case\n");
 			i = n;
 			while (i > 0)
 			{
@@ -48,7 +48,7 @@ void *ft_memmove(void *dest0, const void *src0, size_t n)
 		}
 		else
 		{
-			printf("forward copy case\n");
+			//printf("forward copy case\n");
         	i = 0;
         	while (i < n)
 			{

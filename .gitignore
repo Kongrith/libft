@@ -1,0 +1,6 @@
+/test
+/test.o
+/test.c
+
+*.swp
+/libft.a
