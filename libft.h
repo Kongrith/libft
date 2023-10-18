@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:45:50 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/17 14:51:24 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/18 04:30:17 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_bzero (void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest0, const void *src0, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-char	*ft_strlcat(char *dest, char *src);
+size_t  ft_strlcat(char * restrict dest, const char * restrict src, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);

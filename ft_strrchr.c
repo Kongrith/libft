@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/15 23:55:16 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/18 01:45:56 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ locate last "ch" character in the pointer string.
 
 char	*ft_strrchr(const char *s, int c)
 {
+	int		i;
 	char	*ptr;
 	char	*ptr_match;
 	ptr = (char *) s;
 	ptr_match = NULL;
-
+	i = ft_strlen(ptr);
+	if (c == 0)
+		return (ptr + i);
 	while (*ptr != '\0')
 	{
 		if (*ptr == c)

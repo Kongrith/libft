@@ -6,13 +6,13 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 22:19:14 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/15 23:51:03 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/18 02:35:57 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* strncmp
-compare two string with specific block.
-
+*  compare two string with specific block.
+*
 */
 
 #include "libft.h"
@@ -21,6 +21,8 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
 	while ((s1[i] == s2[i]) && i < n)
 	{
@@ -28,7 +30,9 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 			return 0;
 		++i;
 	}
-	return (s1[i] - s2[i]);
+	if (i == n)
+		return (0);
+	return ( (unsigned char) s1[i] - (unsigned char) s2[i] );
 }
 /*
 int	main(void)

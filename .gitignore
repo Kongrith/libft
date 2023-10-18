@@ -3,6 +3,8 @@
 /test
 /test.o
 /test.c
+/test_strlcpy.c
 
 *.swp
 /libft.a
+/.gitignore

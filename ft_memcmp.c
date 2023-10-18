@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:43:35 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/16 16:57:32 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:52:19 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ compare memory area
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ptr1;
-	char	*ptr2;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 	size_t	i;
 
-	ptr1 = (char *) s1;
-	ptr2 = (char *) s2;
+	ptr1 = (unsigned char *) s1;
+	ptr2 = (unsigned char *) s2;
 	i = 0;	
-	while ((ptr1[i] == ptr2[i]) && i < n)
+	while (i < n)
 	{
-		if (ptr1[i] == '\0')
-			return (0);
-		if (++i == n)
-			return(0);
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
+		i++;
 	}
-	return (ptr1[i] - ptr2[i]);
+	return (0);
 }
 /*
 int	main()
