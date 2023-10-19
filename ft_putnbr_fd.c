@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 14:06:13 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/18 22:09:29 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/18 23:14:21 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/18 23:14:45 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *src)
+void    ft_putnbr_fd(int n, int fd)
 {
-	char	*dest;
-	char	*p;
-	int		len;
-
-	len = 0;
-	while (src[len])
-		len++;
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	p = dest;
-	while (*src)
-		*p++ = *src++;
-	*p = '\0';
-	return (dest);
 }
