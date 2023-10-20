@@ -6,9 +6,15 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 14:06:13 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/18 22:09:29 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:53:44 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	strdup:
+*	save a copy of a string
+*
+*/
+
 
 #include "libft.h"
 
