@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:41:55 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/20 01:07:49 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/21 03:14:25 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,3 @@ char    *ft_strjoin(char const *s1, char const *s2)
 	ptr[i + j] = '\0';
 	return (ptr);	
 }
-/*
-int	main(void)
-{
-	char	*strs[] = {"Hello", "world", "!"};
-	//char	*s;
-	//char *strs[] = (char*[]) {"Hello"};
-	//char *strs = ft_strjoin(2, strs, "");
-	//s = ft_strjoin(3, strs, ", ");
-	//printf("%s", s);
-	//free(s);
-
-
-	s = ft_strjoin(3, strs, ", ");
-	printf("%s", s);
-	free(s);
-	s = ft_strjoin(3, strs, ", ");
-	printf("%s", s);
-	free(s);
-
-	printf("%s\n", ft_strjoin(2, strs, " "));
-	return (0);
-}*/
