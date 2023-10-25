@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/24 21:15:51 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:27:56 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,16 +109,21 @@ char    **ft_split(char const *s, char c)
         char    *ptr;
         size_t  num_split;
         size_t  i;
-
-        if (!s)
-                return (NULL);
-        ptr = (char *) s;
+		char	**rtn;
+        if (!s || !*s)
+		{
+			if (!(rtn = malloc(sizeof(char *) * 1)))
+				return (NULL);
+			*rtn = (void *)0;
+			return (rtn);
+        }
+		ptr = (char *) s;
         num_split = count_char_section(ptr, c);
         //printf("num split:%ld\n", num_split);
         string_array = (char **) malloc (sizeof(char *) * (num_split + 1));
         if (!string_array)
                 return (NULL);
-		//string_array[num_split + 1] = NULL;
+		string_array[num_split + 1] = (void *)0;
         //printf("string array:%s\n",string_array[5]);
         i = 0;
         while (i < num_split)

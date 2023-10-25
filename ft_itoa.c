@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:51:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/18 22:52:22 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:34:17 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,17 @@
 
 char    *ft_itoa(int n)
 {
+	char	*s;
+	long	nbr;
+	
+	nbr = n;
+	s = 0;
+	(void) nbr;
+	return (s);
+}
+
+int	main()
+{
+	
+	return(0);
 }
