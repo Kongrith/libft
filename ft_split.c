@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/24 21:27:56 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/26 01:01:31 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 #include "libft.h"
 
-static void	freemem(char *string_array)
+void	freemem(char **string_array, size_t n)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (string_array[i] != '\0')
+	while (i < n)
 	{
-		free(string_array);
+		free(string_array[i]);
 		i++;
 	}
 	free(string_array);
@@ -122,8 +122,8 @@ char    **ft_split(char const *s, char c)
         //printf("num split:%ld\n", num_split);
         string_array = (char **) malloc (sizeof(char *) * (num_split + 1));
         if (!string_array)
-                return (NULL);
-		string_array[num_split + 1] = (void *)0;
+			return (NULL);
+		string_array[num_split] = NULL;
         //printf("string array:%s\n",string_array[5]);
         i = 0;
         while (i < num_split)
@@ -137,7 +137,7 @@ char    **ft_split(char const *s, char c)
                         string_array[i] = split_string(ptr, c);
 						if (string_array[i] == NULL)
 						{
-							freemem(string_array[i]);
+							freemem(string_array, num_split);
 							return (NULL);
 						}
                         //printf("strign array:%s\n", string_array[i]);
@@ -150,7 +150,7 @@ char    **ft_split(char const *s, char c)
                         string_array[i] = split_string(ptr, c);
                         if (string_array[i] == NULL)
 						{
-							freemem(string_array[i]);
+							freemem(string_array, num_split);
 							return(NULL);
 						}
 						ptr = find_delimiter(ptr, c);
