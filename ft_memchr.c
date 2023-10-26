@@ -6,13 +6,13 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 23:57:42 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/17 15:38:33 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 04:36:56 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* memchr
 search for a byte with "c" in the pointer string with specific blocks.
-
+*
 */
 
 #include "libft.h"
@@ -20,8 +20,8 @@ search for a byte with "c" in the pointer string with specific blocks.
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*ptr;
-	ptr = (char *) s;
 
+	ptr = (char *) s;
 	while (n > 0)
 	{
 		if (*ptr == c)

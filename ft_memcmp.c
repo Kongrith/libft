@@ -6,13 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:43:35 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/17 17:52:19 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:13:51 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* memcmp
 compare memory area
-
 */
 
 #include "libft.h"
@@ -21,11 +20,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
-	size_t	i;
+	size_t			i;
 
 	ptr1 = (unsigned char *) s1;
 	ptr2 = (unsigned char *) s2;
-	i = 0;	
+	i = 0;
 	while (i < n)
 	{
 		if (ptr1[i] != ptr2[i])

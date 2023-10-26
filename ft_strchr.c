@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/18 01:39:40 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:16:43 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*ptr;
+
 	ptr = (char *) s;
-	
 	while (*ptr != '\0')
 	{
 		if (*ptr == c)

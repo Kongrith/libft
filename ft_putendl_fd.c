@@ -6,13 +6,13 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:13:42 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 02:14:25 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 04:58:18 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		exit(0);

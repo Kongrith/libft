@@ -6,16 +6,16 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:06:25 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 01:25:54 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:21:09 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	
+
 	if (!s)
 		exit(0);
 	i = 0;

@@ -6,19 +6,20 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:25:03 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/17 16:37:27 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:03:36 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* memcpy
-copy a memory block where source and destination do not overlap */
+/*	memcpy
+*	copy a memory block where source and destination do not overlap
+*/
 
 #include "libft.h"
 
-void chk_overlap_mem(void *dest, void *src, size_t n)
+void	chk_overlap_mem(void *dest, void *src, size_t n)
 {
-	char *x;
-	char *y;
+	char	*x;
+	char	*y;
 	size_t	i;
 
 	x = dest;
@@ -26,33 +27,31 @@ void chk_overlap_mem(void *dest, void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-    	if (x+i==y || y+i==x)
+		if (x + i == y || y + i == x)
 			exit(1);
 		++i;
 	}
 }
 
-void *ft_memcpy(void *dest0, const void *src0, size_t n)
+void	*ft_memcpy(void *dest0, const void *src0, size_t n)
 {
-	size_t 		i;
-	char		*dest;
+	size_t	i;
+	char	*dest;
 	char	*src;
-	
+
 	dest = (char *) dest0;
 	src = (char *) src0;
-	
 	if ((dest == src) || n == 0)
 		return (dest);
 	if ((dest == NULL) && (src == NULL))
 		return (0);
-	//chk_overlap_mem(dest, src, n);
 	i = 0;
-		while (i < n)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-	return (void *) dest;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return ((void *) dest);
 }
 /*
 int main () {

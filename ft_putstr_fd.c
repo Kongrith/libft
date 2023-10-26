@@ -6,19 +6,18 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:13:03 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 01:48:04 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:13:03 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		exit(0);
 	write(fd, s, ft_strlen(s));
 }
-
 /*
 int	main()
 {
