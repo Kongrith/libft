@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:06:25 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/18 23:07:24 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 01:25:54 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,30 @@
 
 void    ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	unsigned int	i;
+	
+	if (!s)
+		exit(0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, s + i);
+		++i;
+	}
 }
+
+/*
+void	printf_char(unsigned int i, char *c)
+{
+	printf("i:%d %c %c\n", i, *c, c[0]);
+	*c = ft_toupper(*c);
+}
+
+int main()
+{
+	char	s[] = "aBcDeF";
+	printf("before:%s\n", s);
+	ft_striteri(s, printf_char);
+	printf("after:%s\n", s);
+	return(0);
+}*/
