@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 04:04:11 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 04:26:44 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 */
 
 #include "libft.h"
-
+/*
 void	freemem(char **string_array, size_t n)
 {
 	unsigned int	i;
@@ -29,7 +29,7 @@ void	freemem(char **string_array, size_t n)
 		i++;
 	}
 	free(string_array);
-}
+}*/
 
 size_t	count_char_section(char *ptr, char c)
 {
@@ -91,12 +91,29 @@ char	*split_string(char *s, char c)
 	return (string);
 }
 
+void	split_to_str_arr(char **string_array, char *ptr, \
+							char c, size_t num_split)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < num_split)
+	{
+		if (ptr[0] == c)
+			ptr = find_chr_or_delimiter(ptr, c, 1);
+		string_array[i] = split_string(ptr, c);
+		if (string_array[i] == NULL)
+			exit(0);
+		ptr = find_chr_or_delimiter(ptr, c, 0);
+		++i;
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**string_array;
 	char	*ptr;
 	size_t	num_split;
-	size_t	i;
 
 	if (!s || !*s)
 	{
@@ -112,20 +129,7 @@ char	**ft_split(char const *s, char c)
 	if (!string_array)
 		return (NULL);
 	string_array[num_split] = NULL;
-	i = 0;
-	while (i < num_split)
-	{
-		if (ptr[0] == c)
-			ptr = find_chr_or_delimiter(ptr, c, 1);
-		string_array[i] = split_string(ptr, c);
-		if (string_array[i] == NULL)
-		{
-			freemem(string_array, num_split);
-			return (NULL);
-		}
-		ptr = find_chr_or_delimiter(ptr, c, 0);
-		++i;
-	}
+	split_to_str_arr(string_array, ptr, c, num_split);
 	return (string_array);
 }
 /*
