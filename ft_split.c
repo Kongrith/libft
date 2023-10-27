@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 12:35:11 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 04:04:11 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ char	**ft_split(char const *s, char c)
 	char	*ptr;
 	size_t	num_split;
 	size_t	i;
-	int		string_flag;
 
 	if (!s || !*s)
 	{
@@ -117,26 +116,14 @@ char	**ft_split(char const *s, char c)
 	while (i < num_split)
 	{
 		if (ptr[0] == c)
-		{
 			ptr = find_chr_or_delimiter(ptr, c, 1);
-			string_array[i] = split_string(ptr, c);
-			if (string_array[i] == NULL)
-			{
-				freemem(string_array, num_split);
-				return (NULL);
-			}
-			ptr = find_chr_or_delimiter(ptr, c, 0);
-		}
-		else
+		string_array[i] = split_string(ptr, c);
+		if (string_array[i] == NULL)
 		{
-			string_array[i] = split_string(ptr, c);
-			if (string_array[i] == NULL)
-			{
-				freemem(string_array, num_split);
-				return (NULL);
-			}
-			ptr = find_chr_or_delimiter(ptr, c, 1);
+			freemem(string_array, num_split);
+			return (NULL);
 		}
+		ptr = find_chr_or_delimiter(ptr, c, 0);
 		++i;
 	}
 	return (string_array);
@@ -144,12 +131,16 @@ char	**ft_split(char const *s, char c)
 /*
 int	main()
 {
-	char	*s1 = "Hello,World,Split,Me";
-	char	delimiter = ',';
+	char	*s1 = "split  ||this|for|me|||||!|";
+	char	**expected = (char*[6]){"split  ", "this", "for", "me", "!", NULL};
+	char	delimiter = '|';
 	char	**pointer_arrays;
-	pointer_arrays = ft_split(s1, delimiter);
 	printf("original: %s\n", s1);
-	for(int i = 0; i<4; i++)
-      printf("%s\n", pointer_arrays[i]);
+	for(int i = 0; i<6; i++)
+		printf("%s\n", expected[i]);
+	printf("\n");
+	pointer_arrays = ft_split(s1, delimiter);
+	for(int i = 0; i<6; i++)
+		printf("%s\n", pointer_arrays[i]);
 	//printf("ft_split: %s\n", ft_split(s1, delimiter)[0]);
 }*/

@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:51:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 06:01:50 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 03:18:31 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,30 +52,30 @@ char	*generate_string(int abs_value, int size, int positive_flag)
 	return (s);
 }
 
-char	dd(int n, int *positive_flag)
+void	calc_size_and_flag(int n, int *abs_value, int *size, int *positive_flag)
 {
 	if (n >= 0)
-		positive_flag = 1;
+		*positive_flag = 1;
 	else
-		positive_flag = 0;
-	if (!positive_flag)
+		*positive_flag = 0;
+	if (!*positive_flag)
 	{
-		abs_value = n * -1;
-		size = count_digit(abs_value) + 1;
+		*abs_value = n * -1;
+		*size = count_digit(*abs_value) + 1;
 	}
 	else
 	{
-		abs_value = n;
-		size = count_digit(abs_value);
+		*abs_value = n;
+		*size = count_digit(*abs_value);
 	}
 }
 
 char	*ft_itoa(int n)
 {
 	char	*s;
-	int		positive_flag;
 	int		abs_value;
 	int		size;
+	int		positive_flag;
 
 	if (n == -2147483648)
 	{
@@ -85,21 +85,7 @@ char	*ft_itoa(int n)
 		ft_strlcpy(s, "-2147483648", 12);
 		return (s);
 	}
-	/*
-	if (n >= 0)
-		positive_flag = 1;
-	else
-		positive_flag = 0;
-	if (!positive_flag)
-	{
-		abs_value = n * -1;
-		size = count_digit(abs_value) + 1;
-	}
-	else
-	{
-		abs_value = n;
-		size = count_digit(abs_value);
-	}*/
+	calc_size_and_flag(n, &abs_value, &size, &positive_flag);
 	s = generate_string(abs_value, size, positive_flag);
 	return (s);
 }
@@ -109,9 +95,9 @@ int	main()
 	int		n;
 	char	*ans;
 
-	n = -2147483648;
+	n = -123;
 	ans = ft_itoa(n);
-	printf("INT_MIN:%d vs %d\n", INT_MIN, n);
+	//printf("INT_MIN:%d vs %d\n", INT_MIN, n);
 	printf("ft_itoa:%s\n", ans);
 	free(ans);
 	return(0);

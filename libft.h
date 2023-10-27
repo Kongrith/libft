@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:45:50 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 05:08:31 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 03:20:33 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // functions from ctype.h
 int		ft_isalpha(int c);
