@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 04:16:43 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 04:20:10 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 05:46:16 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,34 @@ b) forward copy
 
 #include "libft.h"
 
+char	*backward_copy(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+
+	i = n;
+	while (i > 0)
+	{
+		dest[i - 1] = src[i - 1];
+		--i;
+	}
+	return (dest);
+}
+
+char	*forward_copy(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		++i;
+	}
+	return (dest);
+}
+
 void	*ft_memmove(void *dest0, const void *src0, size_t n)
 {
-	size_t		i;
 	char		*dest;
 	const char	*src;
 
@@ -37,22 +62,8 @@ void	*ft_memmove(void *dest0, const void *src0, size_t n)
 	if (n == 0 || dest == src)
 		return (dest);
 	if ((dest > src) && (src + n > dest))
-	{
-		i = n;
-		while (i > 0)
-		{
-			dest[i - 1] = src[i - 1];
-			--i;
-		}
-	}
+		dest = backward_copy(dest, src, n);
 	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			dest[i] = src[i];
-			++i;
-		}
-	}
+		dest = forward_copy(dest, src, n);
 	return (dest);
 }

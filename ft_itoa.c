@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:51:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 04:31:12 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 06:01:50 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,24 @@ char	*generate_string(int abs_value, int size, int positive_flag)
 	return (s);
 }
 
+char	dd(int n, int *positive_flag)
+{
+	if (n >= 0)
+		positive_flag = 1;
+	else
+		positive_flag = 0;
+	if (!positive_flag)
+	{
+		abs_value = n * -1;
+		size = count_digit(abs_value) + 1;
+	}
+	else
+	{
+		abs_value = n;
+		size = count_digit(abs_value);
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	char	*s;
@@ -67,6 +85,7 @@ char	*ft_itoa(int n)
 		ft_strlcpy(s, "-2147483648", 12);
 		return (s);
 	}
+	/*
 	if (n >= 0)
 		positive_flag = 1;
 	else
@@ -80,7 +99,7 @@ char	*ft_itoa(int n)
 	{
 		abs_value = n;
 		size = count_digit(abs_value);
-	}
+	}*/
 	s = generate_string(abs_value, size, positive_flag);
 	return (s);
 }
