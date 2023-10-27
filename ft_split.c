@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 04:57:30 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:35:11 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,29 +52,23 @@ size_t	count_char_section(char *ptr, char c)
 	return (count);
 }
 
-char	*find_delimiter(char *ptr, char c)
+char	*find_chr_or_delimiter(char *ptr, char c, int string_flag)
 {
 	size_t	i;
 
 	i = 0;
 	while (ptr[i] != '\0')
 	{
-		if (ptr[i] == c)
-			return (ptr + i);
-		++i;
-	}
-	return (0);
-}
-
-char	*find_string(char *ptr, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (ptr[i] != '\0')
-	{
-		if (ptr[i] != c)
-			return (ptr + i);
+		if (string_flag == 1)
+		{
+			if (ptr[i] != c)
+				return (ptr + i);
+		}
+		else
+		{
+			if (ptr[i] == c)
+				return (ptr + i);
+		}
 		++i;
 	}
 	return (0);
@@ -103,15 +97,15 @@ char	**ft_split(char const *s, char c)
 	char	*ptr;
 	size_t	num_split;
 	size_t	i;
-	char	**rtn;
+	int		string_flag;
 
 	if (!s || !*s)
 	{
-		rtn = malloc(sizeof(char *) * 1);
-		if (!rtn)
+		string_array = malloc(sizeof(char *) * 1);
+		if (!string_array)
 			return (NULL);
-		*rtn = (void *)0;
-		return (rtn);
+		*string_array = (void *)0;
+		return (string_array);
 	}
 	ptr = (char *) s;
 	num_split = count_char_section(ptr, c);
@@ -124,14 +118,14 @@ char	**ft_split(char const *s, char c)
 	{
 		if (ptr[0] == c)
 		{
-			ptr = find_string(ptr, c);
+			ptr = find_chr_or_delimiter(ptr, c, 1);
 			string_array[i] = split_string(ptr, c);
 			if (string_array[i] == NULL)
 			{
 				freemem(string_array, num_split);
 				return (NULL);
 			}
-			ptr = find_delimiter(ptr, c);
+			ptr = find_chr_or_delimiter(ptr, c, 0);
 		}
 		else
 		{
@@ -141,7 +135,7 @@ char	**ft_split(char const *s, char c)
 				freemem(string_array, num_split);
 				return (NULL);
 			}
-			ptr = find_delimiter(ptr, c);
+			ptr = find_chr_or_delimiter(ptr, c, 1);
 		}
 		++i;
 	}
