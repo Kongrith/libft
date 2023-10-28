@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 04:26:44 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:32:18 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,8 @@
 */
 
 #include "libft.h"
-/*
-void	freemem(char **string_array, size_t n)
-{
-	unsigned int	i;
 
-	i = 0;
-	while (i < n)
-	{
-		free(string_array[i]);
-		i++;
-	}
-	free(string_array);
-}*/
-
-size_t	count_char_section(char *ptr, char c)
+static	size_t	count_char_section(char *ptr, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -52,7 +39,7 @@ size_t	count_char_section(char *ptr, char c)
 	return (count);
 }
 
-char	*find_chr_or_delimiter(char *ptr, char c, int string_flag)
+static	char	*find_chr_or_delimiter(char *ptr, char c, int string_flag)
 {
 	size_t	i;
 
@@ -74,7 +61,7 @@ char	*find_chr_or_delimiter(char *ptr, char c, int string_flag)
 	return (0);
 }
 
-char	*split_string(char *s, char c)
+static	char	*split_string(char *s, char c)
 {
 	char	*string;
 	char	*ptr;
@@ -91,7 +78,7 @@ char	*split_string(char *s, char c)
 	return (string);
 }
 
-void	split_to_str_arr(char **string_array, char *ptr, \
+static	void	split_to_str_arr(char **string_array, char *ptr, \
 							char c, size_t num_split)
 {
 	size_t	i;

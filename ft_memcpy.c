@@ -6,7 +6,7 @@
 /*   By: kkomasat <kkomasat@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:25:03 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 05:03:36 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:27:51 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,6 @@
 */
 
 #include "libft.h"
-
-void	chk_overlap_mem(void *dest, void *src, size_t n)
-{
-	char	*x;
-	char	*y;
-	size_t	i;
-
-	x = dest;
-	y = src;
-	i = 0;
-	while (i < n)
-	{
-		if (x + i == y || y + i == x)
-			exit(1);
-		++i;
-	}
-}
 
 void	*ft_memcpy(void *dest0, const void *src0, size_t n)
 {

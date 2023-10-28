@@ -6,13 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 00:16:41 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 13:42:48 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:20:55 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
+
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
 	if (' ' <= c && c <= '~')

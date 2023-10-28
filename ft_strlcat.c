@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 17:41:19 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 04:08:06 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:24:00 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ dst\0 | src\0 | 8       || dstsrc\0 | 6
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dest0, const char *restrict src0, size_t size)
+size_t	ft_strlcat(char *dest0, const char *src0, size_t size)
 {
 	size_t	i;
 	size_t	j;

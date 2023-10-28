@@ -6,13 +6,13 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:41:55 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 05:35:30 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:30:47 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*join_string(char *ptr, char const *s1, char const *s2)
+static	char	*join_string(char *ptr, char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;

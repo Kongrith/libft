@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 13:36:22 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 05:14:38 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:23:49 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ copy a size-bounded string to destination with specific blocks.
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	length;
 	size_t	index;
@@ -28,10 +28,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		return (length);
 	while (index < size - 1 && index < length)
 	{
-		*(dest + index) = *(src + index);
+		*(dst + index) = *(src + index);
 		++index;
 	}
-	*(dest + index) = '\0';
+	*(dst + index) = '\0';
 	while (src[index] != '\0')
 		++index;
 	return (index);

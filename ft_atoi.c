@@ -6,11 +6,11 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 13:14:00 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 13:59:51 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:29:42 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int ch)
+static	int	ft_isspace(int ch)
 {
 	if ((9 <= ch && ch <= 13) || ch == 32)
 	{
@@ -20,7 +20,7 @@ int	ft_isspace(int ch)
 		return (0);
 }
 
-int	manage_character(char *str, int *ptr)
+static	int	manage_character(char *str, int *ptr)
 {
 	int	index;
 	int	sign;

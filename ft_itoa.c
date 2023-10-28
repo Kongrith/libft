@@ -6,13 +6,13 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:51:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 03:18:31 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:35:16 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digit(int n)
+static	int	count_digit(int n)
 {
 	int	digit;
 
@@ -27,7 +27,7 @@ int	count_digit(int n)
 	return (digit);
 }
 
-char	*generate_string(int abs_value, int size, int positive_flag)
+static	char	*generate_string(int abs_value, int size, int positive_flag)
 {
 	char	*s;
 	int		i;
@@ -52,7 +52,8 @@ char	*generate_string(int abs_value, int size, int positive_flag)
 	return (s);
 }
 
-void	calc_size_and_flag(int n, int *abs_value, int *size, int *positive_flag)
+static	void	calc_size_and_flag(int n, int *abs_value, \
+		int *size, int *positive_flag)
 {
 	if (n >= 0)
 		*positive_flag = 1;

@@ -6,16 +6,16 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/27 05:16:43 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:25:11 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /* strchr
 *  locate first "ch" character in the pointer string.
 *
 */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
