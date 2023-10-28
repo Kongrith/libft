@@ -9,26 +9,25 @@ SRCS = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strl
 OBJS = $(SRCS:.c=.o)
 CXX = gcc
 STDFLAG = -std=c99
-WARN = -Wall -Werror -Wextra
-CCFLAGS = $(WARN)
-
-all: $(NAME)
-	echo "01"
+OPTIONS = -Wall -Werror -Wextra
+CCFLAGS = $(OPTIONS)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME).a $(OBJS)
-	echo "02"
 
 %.o: %.c
-	$(CXX) $(CCFLAGS) -Isrc/ -c $< -o $@
-	echo "03"
+	$(CXX) $(CCFLAGS) -c $< -o $@
+
+all: $(NAME)
+	@echo "make all"
 
 clean:
+	rm -f $(NAME).a
 	rm -rf $(OBJS)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re
