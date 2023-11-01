@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:06:25 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:33:29 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:52:11 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-	if (!s)
-		exit(0);
 	i = 0;
 	while (s[i] != '\0')
 	{

@@ -1,4 +1,4 @@
-NAME = libft
+NAME = libft.a
 SRCS = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
 		ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c \
 		ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
@@ -7,26 +7,23 @@ SRCS = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strl
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 	
 OBJS = $(SRCS:.c=.o)
-CXX = gcc
-STDFLAG = -std=c99
+CXX = cc
 OPTIONS = -Wall -Werror -Wextra
 CCFLAGS = $(OPTIONS)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME).a $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CXX) $(CCFLAGS) -c $< -o $@
 
 all: $(NAME)
-	@echo "make all"
 
 clean:
-	rm -f $(NAME).a
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME) || true
 
 re: fclean all
 

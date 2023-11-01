@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:45 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:32:18 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:50:38 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ static	void	split_to_str_arr(char **string_array, char *ptr, \
 		if (ptr[0] == c)
 			ptr = find_chr_or_delimiter(ptr, c, 1);
 		string_array[i] = split_string(ptr, c);
-		if (string_array[i] == NULL)
-			exit(0);
 		ptr = find_chr_or_delimiter(ptr, c, 0);
 		++i;
 	}

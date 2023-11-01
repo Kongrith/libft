@@ -6,9 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 13:14:00 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:29:42 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/31 11:59:03 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <stdio.h>
 
 static	int	ft_isspace(int ch)
 {
@@ -34,6 +37,7 @@ static	int	manage_character(char *str, int *ptr)
 		if (str[index] == '-')
 		{
 			sign *= -1;
+			return (sign);
 		}
 		index++;
 	}
@@ -41,26 +45,28 @@ static	int	manage_character(char *str, int *ptr)
 	return (sign);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	input_number;
 	int	sign;
 	int	index;
-
-	sign = manage_character(str, &index);
+	printf("str: %s\n", str);
+	sign = manage_character((char *) str, &index);
 	input_number = 0;
-	while (str[index] != '\0' && '0' <= str[index] && str[index] <= '9' )
+	printf("str[index]:%c\n", str[0]);
+	while ((str[index] != '\0') && ('0' <= str[index] && str[index] <= '9') )
 	{
+		printf("str[index]: %c\n", str[index]);
 		input_number = 10 * input_number + (str[index] - '0');
 		++index;
 	}
+	printf("input number: %d\n", input_number);
 	return (input_number * sign);
 }
 
-/*
+
 int	main(void)
 {
-	printf("%d\n", ft_atoi("   ---+--+1234ab567"));
+	printf("%d\n", ft_atoi("-4886"));
 	return (0);
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:13:42 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:34:14 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/31 11:03:27 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
-		exit(0);
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
