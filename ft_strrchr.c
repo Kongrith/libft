@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:25:49 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/11/02 06:16:00 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,41 @@
 */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	char	*ptr;
 	char	*ptr_match;
 
 	ptr = (char *) s;
 	ptr_match = NULL;
-	i = ft_strlen(ptr);
 	if (c == 0)
-		return (ptr + i);
+		return (ptr + ft_strlen(ptr));
+	c = c % 256;
 	while (*ptr != '\0')
 	{
 		if (*ptr == c)
 			ptr_match = ptr;
 		++ptr;
 	}
-	return (ptr_match);
+	if (ptr_match != NULL)
+		return (ptr_match);
+	else if (*ptr == c)
+		return (ptr);
+	else
+		return (NULL);
 }
-/*
-int main () {
-	const char	str1[] = "This is just a String";
-	const char  str2[] = "This is just a String";
-	const char	ch = 'a'; 
 
-	printf("original      : %s\n", str1);
-	printf("strrchr    (%c) : %s\n", ch, strrchr(str1, ch));
-	printf("ft_strrchr (%c) : %s\n", ch, ft_strrchr(str2, ch));
+int main () {
+	// str = teste  ch = x    
+	const char	str[] = "123456789";
+	int ch = 'a'; 
+
+	printf("original      : %s\n", str);
+	printf("char: %c int %d\n", ch, ch);
+	printf("strrchr    (%c) : %s\n", ch, strrchr(str, ch));
+	printf("ft_strrchr (%c) : %s\n", ch, ft_strrchr(str, ch));
 	return 0;
-}*/
+}
