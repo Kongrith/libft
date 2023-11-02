@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 04:16:43 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:23:28 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/11/03 00:02:57 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	*ft_memmove(void *dest0, const void *src0, size_t len)
 	char		*dest;
 	const char	*src;
 
-	dest = dest0;
-	src = src0;
+	dest = (char *)dest0;
+	src = (const char *)src0;
 	if (len == 0 || dest == src)
-		return (dest);
+		return ((void *)dest);
 	if ((dest > src) && (src + len > dest))
 		dest = backward_copy(dest, src, len);
 	else
 		dest = forward_copy(dest, src, len);
-	return (dest);
+	return ((void *)dest);
 }

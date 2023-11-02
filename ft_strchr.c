@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/11/02 05:37:08 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:38:50 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int i)
+char	*ft_strchr(const char *s, int c)
 {
 	char	*ptr;
-	char	c;
 
-	c = i % 256;
+	c = c % 256;
 	ptr = (char *) s;
 	while ((*ptr != '\0'))
 	{

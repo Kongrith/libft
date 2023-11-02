@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:40:55 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/28 18:30:27 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/11/03 00:52:40 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if ((size_t)start > ft_strlen((char *) s))
+	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	if (*s == '\0')
+		len = 0;
 	ptr = (char *) malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
 		return (NULL);
