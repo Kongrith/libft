@@ -6,7 +6,7 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:19:30 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/11/02 23:41:25 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:30:21 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,27 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
+	size_t		i;
 	char	*ptr;
-	char	*ptr_match;
 
-	ptr = (char *) s;
-	ptr_match = NULL;
-	//if (c == 0)
-	//	return (ptr + ft_strlen(ptr));
+	i = 0;
+	ptr = NULL;
 	c = c % 256;
-	while (*ptr != '\0')
+	while (s[i] && i < ft_strlen(s))
 	{
-		if ((unsigned char)*ptr == (unsigned char)c)
-			ptr_match = ptr;
-		++ptr;
+		if (s[i] == c)
+			ptr = (char *)(s + i);
+		++i;
 	}
-	if (ptr_match != NULL)
-		return (ptr_match);
-	else if ((unsigned char)*ptr == (unsigned char)c)
-		return (ptr);
-	else
-		return (NULL);
+	if (s[i] == c) 
+		ptr = (char *)(s + i);
+	//if (ptr_match != NULL)
+	//	return (ptr_match);
+	//else if ((unsigned char)*ptr == (unsigned char)c)
+	//	return (ptr);
+	//else
+	//	return (NULL);
+	return (ptr);
 }
 /*
 int main () {
