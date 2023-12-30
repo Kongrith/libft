@@ -6,46 +6,54 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 22:19:14 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 14:35:40 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:28:15 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* strncmp
+*  compare two string with specific block.
+*
+*/
+
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	index;
-	char			char_s1;
-	char			char_s2;
+	size_t	i;
 
-	if (n <= 0)
+	if (n == 0)
 		return (0);
-	index = 0;
-	while (*(s1 + index) != '\0' && *(s2 + index) != '\0' && index < n)
+	i = 0;
+	while ((s1[i] == s2[i]) && i < n)
 	{
-		if (*(s1 + index) != *(s2 + index))
-			break ;
-		++index;
+		if (s1[i] == '\0')
+			return (0);
+		++i;
 	}
-	if (index == n)
-		--index;
-	char_s1 = *(s1 + index);
-	char_s2 = *(s2 + index);
-	if (char_s1 == char_s2)
+	if (i == n)
 		return (0);
-	else if (char_s1 > char_s2)
-		return (char_s1 - char_s2);
-	else
-		return (char_s1 - char_s2);
+	return (((unsigned char) s1[i] - (unsigned char) s2[i]));
 }
-
 /*
 int	main(void)
 {
 	char	str1[] = "abc";
 	char	str2[] = "abb";
-	(void) str1;
-	(void) str2;
-	printf("%d ", strncmp(str1, str2, 2));
+	char    str3[] = "abb";
+	char    str4[] = "abc";
+	char    str5[] = "abb";
+	char    str6[] = "abb";
+	printf("case0: zero block\n");
+	printf("strncmp   :%d\n", strncmp(str1, str2, 0));
+	printf("ft_strncmp:%d\n", ft_strncmp(str1, str2, 0));
+	printf("case1: greater\n");
+	printf("strncmp   :%d\n", strncmp(str1, str2, 3));
+	printf("ft_strncmp:%d\n", ft_strncmp(str1, str2, 3));
+	printf("case2: less than\n");
+	printf("strncmp   :%d\n", strncmp(str3, str4, 3));
+	printf("ft_strncmp:%d\n", ft_strncmp(str3, str4, 3));
+	printf("case3: equal\n");
+	printf("strncmp   :%d\n", strncmp(str5, str6, 3));
+	printf("ft_strncmp:%d\n", ft_strncmp(str5, str6, 3));
 	return (0);
 }*/

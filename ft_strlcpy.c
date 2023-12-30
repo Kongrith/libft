@@ -6,38 +6,42 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 13:36:22 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/14 09:38:03 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:23:49 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* strlcpy
-copy string to an specific size
+copy a size-bounded string to destination with specific blocks.
 
 */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	length;
 	size_t	index;
 
-	if (size == 0)
-		return (0);
-
-	length = ft_strlen(src);
+	length = ft_strlen((char *) src);
 	index = 0;
+	if (size == 0)
+		return (length);
 	while (index < size - 1 && index < length)
 	{
-		*(dest + index) = *(src + index);
+		*(dst + index) = *(src + index);
 		++index;
 	}
-	*(dest + index) = '\0';
+	*(dst + index) = '\0';
+	while (src[index] != '\0')
+		++index;
 	return (index);
 }
-
+/*
 int	main(void)
 {
 	char src1[] = "abcde";
-	char dest[] 
-}
+	char dest1[] = "";
+
+	printf("%ld \n", ft_strlcpy(dest1, src1, 2));
+	printf("%s \n", dest1);
+}*/

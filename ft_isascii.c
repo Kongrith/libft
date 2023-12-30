@@ -6,13 +6,12 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:59:20 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 14:01:44 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:20:31 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
+
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
 	if (0 <= c && c <= 127)

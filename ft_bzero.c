@@ -6,36 +6,25 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:50:54 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 14:32:32 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:21:52 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	*ft_bzero (void *s, size_t n)
+
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ptr;
-	/*
-	char msg;
-	if (n > ft_strlen(s) + 1)
-	{
-		write(1, "warning: '__builtin_memset' writing ", 36);
-		msg = n + '0';
-		write(1, &msg, 1);
-		write(1, " bytes into a region of size ", 29);
-		msg = ft_strlen(s) + 1 + '0';
-		write(1, &msg, 1);
-		write(1, " overflows the destination\n", 27);
-	}*/
+
 	i = 0;
 	ptr = (unsigned char *) s;
-	while (i < n)  
+	while (i < n)
 	{
 		*(ptr + i) = (unsigned int) 0;
 		++i;
 	}
-	return s;
-}  
+}
 /*
 int main(void) 
 { 

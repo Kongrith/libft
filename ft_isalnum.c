@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 22:38:52 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/13 13:41:50 by kkomasat         ###   ########.fr       */
+/*   Created: 2023/10/27 04:02:32 by kkomasat          #+#    #+#             */
+/*   Updated: 2023/10/28 18:19:59 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
+
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if (('0' <= c && c <= '9') || ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
+	if (('0' <= c && c <= '9') || ('A' <= c && c <= 'Z') \
+		|| ('a' <= c && c <= 'z'))
 	{
 		return (1);
 	}

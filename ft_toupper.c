@@ -6,38 +6,45 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:10:55 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/05 14:39:32 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:24:12 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <ctype.h>
-#include <stdio.h>
+
+/* toupper
+convert alphabet to uppercase
 */
+
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
-		return (c - 32);
+		return (c - ('a' - 'A'));
 	else
 		return (c);
 }
 /*
-int main()
+int	main()
 {
-    int j = 0;
-    char str[] = "GeEks@123\n";
+    int j;
+    char str[] = "GeEks@123";
     char ch;
- 
-    while (str[j] != '\n') {
+	printf("original:   %s\n", str);
+ 	printf("toupper:    ");	
+    
+	j = 0;
+	while (str[j] != '\0') {
         ch = str[j];
-        putchar(toupper(ch));
+		printf("%c", toupper(ch));
         j++;
     }
-	printf("\n");
+	printf("\nft_toupper: ");
 	j = 0;
-	while (str[j] != '\n') {
+	while (str[j] != '\0') {
 		ch = str[j];
-		putchar(ft_toupper(ch));
+		printf("%c", ft_toupper(ch));
 		j++;
 	}
+	printf("\n");
     return 0;
 }*/

@@ -6,128 +6,50 @@
 /*   By: kkomasat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 18:41:55 by kkomasat          #+#    #+#             */
-/*   Updated: 2023/10/03 02:35:16 by kkomasat         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:30:47 by kkomasat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+static	char	*join_string(char *ptr, char const *s1, char const *s2)
 {
-	int	index;
-	int	length;
-
-	length = 0;
-	while (*(dest + length) != '\0')
-		++length;
-	index = 0;
-	while (*(src + index) != '\0')
-	{
-		*(dest + index + length) = *(src + index);
-		++index;
-	}
-	*(dest + index + length) = '\0';
-	return (dest);
-}
-
-int	count(char *str)
-{
-	int	i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (s1[i] != '\0')
+	{
+		ptr[i] = s1[i];
 		++i;
-	return (i);
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		ptr[i + j] = s2[j];
+		++j;
+	}
+	ptr[i + j] = '\0';
+	return (ptr);
 }
 
-int	sentence_length(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	sep_length;
-	int	word_length;	
-	int	i;
+	char	*ptr;
+	size_t	len1;
+	size_t	len2;
 
-	sep_length = count(sep);
-	i = 0;
-	word_length = 0;
-	while (strs[i] != NULL && i < size)
-	{
-		word_length += count(strs[i]);
-		++i;
-	}
-	return ((sep_length * (size - 1)) + word_length + 1);
-}
-
-char	*handle_join(int size, char **strs, char *sep, char *sentence)
-{
-	int	i;
-	int	length;
-
-	length = sentence_length(size, strs, sep);
-	if (size == 1)
-	{
-		sentence = ft_strcat(sentence, strs[0]);
-		sentence[length -1] = '\0';
-		return (sentence);
-	}
-	i = 0;
-	while (i < size)
-	{
-		sentence = ft_strcat(sentence, strs[i]);
-		if (i != size -1 && sep != NULL)
-		{
-			sentence = ft_strcat(sentence, sep);
-		}
-		++i;
-	}
-	sentence[length -1] = '\0';
-	return (sentence);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	int		length;
-	int		i;
-	char	*sentence;
-
-	if (size <= 0)
-	{
-		return ((char *) malloc(sizeof(char)));
-	}
-	if (size == 1)
-		length = count(strs[0]);
-	else
-		length = sentence_length(size, strs, sep);
-	sentence = (char *) malloc(sizeof(char) * length);
-	i = 0;
-	while (sentence[i] != '\0')
-	{
-		sentence[i] = 0;
-		++i;
-	}
-	if (sentence == NULL)
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	len1 = ft_strlen((char *) s1);
+	len2 = ft_strlen((char *) s2);
+	ptr = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!ptr)
 		return (0);
-	sentence = handle_join(size, strs, sep, sentence);
-	return (sentence);
+	ptr = join_string(ptr, s1, s2);
+	return (ptr);
 }
-/*
-int	main(void)
-{
-	char	*strs[] = {"Hello", "world", "!"};
-	//char	*s;
-	//char *strs[] = (char*[]) {"Hello"};
-	//char *strs = ft_strjoin(2, strs, "");
-	//s = ft_strjoin(3, strs, ", ");
-	//printf("%s", s);
-	//free(s);
-
-
-	s = ft_strjoin(3, strs, ", ");
-	printf("%s", s);
-	free(s);
-	s = ft_strjoin(3, strs, ", ");
-	printf("%s", s);
-	free(s);
-
-	printf("%s\n", ft_strjoin(2, strs, " "));
-	return (0);
-}*/
